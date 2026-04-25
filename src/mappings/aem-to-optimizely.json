@@ -1,0 +1,29 @@
+{
+  "sourceType": "aemPage",
+  "targetType": "optimizelyPage",
+  "fields": {
+    "title": "jcr:title",
+    "description": "jcr:description",
+
+    "seoTitle": "seo.metaTitle",
+    "seoDescription": "seo.metaDescription",
+
+    "blocks": {
+      "$iterate": "components",
+      "$map": {
+        "text": {
+          "targetType": "textBlock",
+          "fields": {
+            "text": "text"
+          }
+        },
+        "image": {
+          "targetType": "imageBlock",
+          "fields": {
+            "imageUrl": "url"
+          }
+        }
+      }
+    }
+  }
+}

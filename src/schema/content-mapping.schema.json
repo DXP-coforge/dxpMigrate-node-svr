@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["sourceType", "targetType", "fields"],
+  "properties": {
+    "sourceType": { "type": "string" },
+    "targetType": { "type": "string" },
+
+    "fields": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "required": ["$iterate", "$map"],
+            "properties": {
+              "$iterate": { "type": "string" },
+              "$map": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": ["targetType", "fields"],
+                  "properties": {
+                    "targetType": { "type": "string" },
+                    "fields": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": ["$when", "then"],
+            "properties": {
+              "$when": {
+                "type": "object",
+                "required": ["path"],
+                "properties": {
+                  "path": { "type": "string" },
+                  "equals": {},
+                  "exists": { "type": "boolean" }
+                },
+                "additionalProperties": false
+              },
+              "then": {
+                "oneOf": [
+                  { "type": "string" },
+                  {
+                    "type": "object",
+                    "required": ["$iterate", "$map"],
+                    "properties": {
+                      "$iterate": { "type": "string" },
+                      "$map": { "type": "object" }
+                    }
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  }
+}

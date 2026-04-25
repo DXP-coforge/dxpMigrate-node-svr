@@ -1,0 +1,17 @@
+{
+  "jcr:title": "Home",
+  "seo": {
+    "title": "Home Page"
+  },
+  "components": [
+    {
+      "type": "hero",
+      "headline": "Welcome",
+      "image": "/content/dam/hero.jpg"
+    },
+    {
+      "type": "text",
+      "text": "Hello world"
+    }
+  ]
+}

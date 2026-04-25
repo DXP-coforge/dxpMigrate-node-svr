@@ -1,0 +1,32 @@
+{
+  "sourceType": "aem:page",
+  "targetType": "optimizely:page",
+  "fields": {
+    "title": "jcr:title",
+    "seoTitle": {
+      "$when": {
+        "path": "seo.title",
+        "exists": true
+      },
+      "then": "seo.title"
+    },
+    "sections": {
+      "$iterate": "components",
+      "$map": {
+        "hero": {
+          "targetType": "hero",
+          "fields": {
+            "headline": "headline",
+            "image": "image"
+          }
+        },
+        "text": {
+          "targetType": "textBlock",
+          "fields": {
+            "text": "text"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "fanOut": false,
+
+  "fields": {
+
+    "displayName": "jcr:title",
+
+    "contentType": {
+      "type": "constant",
+      "value": "standardPage"
+    },
+
+    "container": {
+      "type": "constant",
+      "value": "e9e5cfee0b5c418ba70a49421a0b40bc"
+    },
+
+    "locale": "jcr:language",
+
+    "properties": {
+
+      "title": "jcr:title",
+
+      "seoTitle": "seoTitle",
+
+      "seoDescription": "seoDescription",
+
+      "SeoSettings": {
+        "graphType": "seoSettings.graphType"
+      },
+
+      "mainContentArea": {
+        "type": "contentArea",
+        "source": "mainContent"
+      }
+    }
+  }
+}

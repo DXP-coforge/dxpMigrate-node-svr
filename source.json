@@ -1,0 +1,27 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:title": "About Test BankX",
+
+  "seoTitle": "About Test BankX",
+  "seoDescription": "Few Details Heading",
+
+  "seoSettings": {
+    "graphType": "website"
+  },
+
+  "mainContent": [
+    {
+      "type": "text",
+      "text": "<p>...</p>"
+    },
+    {
+      "type": "image",
+      "url": "/content/dam/globalassets/loans.jpg",
+      "altText": "Loans Promotional Image"
+    }
+  ],
+
+  "jcr:language": "en",
+
+  "jcr:path": "/content/test-bankx/about"
+}

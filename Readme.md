@@ -1,3 +1,5 @@
+git clone https://DXP-coforge:<TOKEN>@github.com/DXP-coforge/dxpMigrate-node-svr.git
+
 Compile:
     npx tsc
 
